@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+            <input type="text" id="numDisplay" class="form-control form-control-lg" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">1</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">2</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">3</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-clear">Clear</button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">4</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">5</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">6</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-backspace">←</button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">7</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">8</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">9</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100">&nbsp;</button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">00</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-btn">0</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100">●</button>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-secondary btn-lg w-100 num-enter">Enter</button>
+            </div>
+        </div>
+    </div>
+      
+</div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+<script type="text/javascript" src="../../src/pa.js"></script>
+
+</body>
+</html>
