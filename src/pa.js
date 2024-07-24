@@ -23,7 +23,7 @@ document.querySelector('.num-enter').addEventListener('click', function() {
 
     // alert(`User Input: ${numDisplay.value}`);
     axios.post('/axios/test', {
-        problem: "pa",
+        problem: "ProblemA",
         encrypt: numDisplay.value
     })
     .then(function (response) {
@@ -38,3 +38,17 @@ document.querySelector('.num-enter').addEventListener('click', function() {
     numDisplay.value = "";
 
 });
+
+const coll = document.getElementsByClassName("collapsible");
+
+for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}

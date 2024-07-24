@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 app.set('view engine', 'ejs');
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/src', express.static(path.join(__dirname, 'src')));
 app.use(express.json());
 
@@ -32,8 +33,10 @@ app.get('/pb', function(req, res) {
 });
 
 app.post('/axios/test', function(req, res) {
-    let answer = process.env.ProblemA;
-    // console.log(answer, req.body.encrypt);
+    console.log("Problem: ", req.body.problem);
+    let answerKey = req.body.problem;
+    let answer = (process.env)[answerKey];
+    // console.log(answer);
     // console.log(typeof(answer), typeof(req.body.encrypt));
     let judge_result = answer === req.body.encrypt;
     res.json({

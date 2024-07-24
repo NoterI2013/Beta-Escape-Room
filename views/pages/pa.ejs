@@ -3,6 +3,8 @@
 
 <head>
     <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/src/togglelist.css">
+    <link rel="stylesheet" href="/src/responsive.css">
 </head>
 
 <body class="container">
@@ -13,6 +15,21 @@
 
 <main>
 <div class="jumbotron">
+    <!-- <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 1em;">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZsPxm23AiW8?si=3ACMfhErh6zt0bqL" allowfullscreen></iframe>
+    </div> -->
+    <div class="container">
+        <button type="button" class="collapsible" title="try">題目</button>
+        <div class="content">
+            <img src="/public/Q4-1.PNG" alt="Nature" class="responsive" width="720" height="1040" style="align-content: center;">
+        </div>
+    </div>
+    <div class="container" style="margin: 1em;">
+        <video width="1200" controls>
+            <source src="/public/Q4.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
     <div class="container">
         <div class="row mb-3">
             <div class="col-12">
@@ -58,7 +75,7 @@
             <button class="btn btn-secondary btn-lg w-100 num-btn">9</button>
             </div>
             <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100">&nbsp;</button>
+            <button class="btn btn-secondary btn-lg w-100" disabled>&nbsp;</button>
             </div>
         </div>
         <div class="row mt-2">
@@ -69,14 +86,13 @@
             <button class="btn btn-secondary btn-lg w-100 num-btn">0</button>
             </div>
             <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100">●</button>
+            <button class="btn btn-secondary btn-lg w-100" disabled>●</button>
             </div>
             <div class="col-3">
             <button class="btn btn-secondary btn-lg w-100 num-enter">Enter</button>
             </div>
         </div>
     </div>
-      
 </div>
 </main>
 
