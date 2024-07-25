@@ -32,6 +32,10 @@ app.get('/pb', function(req, res) {
     res.render('pages/pb.ejs');
 });
 
+app.get('/pc', function(req, res) {
+    res.render('pages/pc.ejs');
+});
+
 app.post('/axios/test', function(req, res) {
     console.log("Problem: ", req.body.problem);
     let answerKey = req.body.problem;

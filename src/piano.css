@@ -1,0 +1,59 @@
+.piano {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.piano-key {
+    width: 40px;
+    height: 200px;
+    margin: 2px;
+    border: 1px solid black;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    line-height: 300px; /* Align text vertically */
+}
+
+.white-key {
+    background: white;
+}
+
+.white-key[data-enable="false"]{
+    background: lightgray;
+}
+
+.white-key.active {
+    background: rgb(173, 173, 173); /* Change to any color you prefer */
+}
+
+.black-key {
+    background: rgb(66, 66, 66);
+    width: 30px;
+    height: 120px;
+    position: absolute;
+    margin-left: -15px;
+    z-index: 1;
+    color: white; /* Text color for black keys */
+    text-align: center;
+    line-height: 120px; /* Align text vertically */
+}
+
+.black-key.right {
+    margin-left: -15px;
+}
+
+.black-key.left {
+    margin-left: 10px;
+}
+
+.black-key.active {
+    background: rgb(0, 0, 0); /* Change to any color you prefer */
+}
+
+.black-key[data-enable="false"]{
+    background: #808385;
+}
