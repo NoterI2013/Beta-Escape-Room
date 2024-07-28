@@ -37,12 +37,12 @@ app.get('/pc', function(req, res) {
 });
 
 app.post('/axios/test', function(req, res) {
-    console.log("Problem: ", req.body.problem);
     let answerKey = req.body.problem;
     let answer = (process.env)[answerKey];
     // console.log(answer);
     // console.log(typeof(answer), typeof(req.body.encrypt));
     let judge_result = answer === req.body.encrypt;
+    console.log(req.body.problem, "input: ", req.body.encrypt, "; Judge Result: ", judge_result);
     res.json({
         accept: judge_result
     });
