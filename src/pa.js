@@ -1,4 +1,5 @@
-const numDisplay = document.getElementById('numDisplay');
+const numDisplay  = document.getElementById('numDisplay');
+const judgeResult = document.getElementById('judge-result');
 
 document.querySelectorAll('.num-btn').forEach(button => {
     button.addEventListener('click', function() {
@@ -17,20 +18,30 @@ document.querySelector('.num-backspace').addEventListener('click', function() {
 });
 
 document.querySelector('.num-enter').addEventListener('click', function() {
-    // console.log('enter clicked');
+    judgeResult.innerHTML = "";
     if(numDisplay.value === "")
         return;
 
-    // alert(`User Input: ${numDisplay.value}`);
+    // console.log(document.getElementById('judge-result'));
+    // console.log(generate("info"));
     axios.post('/axios/test', {
         problem: "ProblemA",
         encrypt: numDisplay.value
     })
     .then(function (response) {
         console.log(response.data.accept);
+        // console.log(typeof response.data.accept);
+        if(response.data.accept === true){
+            // console.log(generate("success"));
+            judgeResult.innerHTML = generate("success");
+        }else if(response.data.accept === false){
+            // console.log(generate("danger"));
+            judgeResult.innerHTML = generate("danger");
+        }
     })
     .catch(function (err) {
         console.error(err);
+        judgeResult.innerHTML = generate("warning");
     })
     // .finally(function () {
     //     console.log('hi ho');
@@ -51,4 +62,21 @@ for (let i = 0; i < coll.length; i++) {
             content.style.display = "block";
         }
     });
+}
+
+const judgeTable = {
+    info : "Judging...",
+    success: "Accepted",
+    danger: "Wrong Password",
+    warning: "Error! Please retry or ask the administrator"
+};
+
+function generate(property){
+    const resultDisplay = `
+        <div class="alert alert-${property}" role="alert">
+            ${judgeTable[property]}
+        </div>
+    `;
+    // console.log(resultDisplay);
+    return resultDisplay;
 }
