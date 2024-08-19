@@ -57,7 +57,7 @@ app.get('/certificate', function(req, res) {
     // console.log( Object.prototype.hasOwnProperty.call(process.env, `${req.query.p}_filename`) );
     // res.status(200);
     if(Object.prototype.hasOwnProperty.call(process.env, file_name_key)){
-        let file_name = process.env.file_name;
+        let file_name = (process.env)[file_name_key];
         res.download(path.join(__dirname, `/private/${req.query.arg}`), file_name, (err) => {
             if (err) {
                 console.error(err);
