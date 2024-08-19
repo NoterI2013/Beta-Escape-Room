@@ -1,3 +1,4 @@
+const problemKey  = "ProblemA";
 const numDisplay  = document.getElementById('numDisplay');
 const judgeResult = document.getElementById('judge-result');
 
@@ -25,19 +26,20 @@ document.querySelector('.num-enter').addEventListener('click', function() {
     // console.log(document.getElementById('judge-result'));
     // console.log(generate("info"));
     axios.post('/axios/test', {
-        problem: "ProblemA",
+        problem: problemKey,
         encrypt: numDisplay.value
     })
     .then(function (response) {
-        console.log(response.data.accept);
-        // console.log(typeof response.data.accept);
         if(response.data.accept === true){
             // console.log(generate("success"));
             judgeResult.innerHTML = generate("success");
+            // judgeResult.children[0].innerHTML += `&nbsp&nbsp <button type="button" class="btn btn-outline-success" id="certificate">Download the certificate</button>`
+            judgeResult.children[0].innerHTML += `<hr> <a href="/certificate?arg=${response.data.secret}&p=${problemKey}" class="alert-link">Click here to download the certificate</a>`
         }else if(response.data.accept === false){
             // console.log(generate("danger"));
             judgeResult.innerHTML = generate("danger");
         }
+        
     })
     .catch(function (err) {
         console.error(err);
@@ -66,7 +68,7 @@ for (let i = 0; i < coll.length; i++) {
 
 const judgeTable = {
     info : "Judging...",
-    success: "Accepted",
+    success: "Accepted!!",
     danger: "Wrong Password",
     warning: "Error! Please retry or ask the administrator"
 };

@@ -37,15 +37,36 @@ app.get('/pc', function(req, res) {
 });
 
 app.post('/axios/test', function(req, res) {
-    let answerKey = req.body.problem;
-    let answer = (process.env)[answerKey];
+    let response_message = {}
+    let answer_key = req.body.problem;
+    let answer = (process.env)[answer_key];
     // console.log(answer);
     // console.log(typeof(answer), typeof(req.body.encrypt));
     let judge_result = answer === req.body.encrypt;
     console.log(req.body.problem, "input: ", req.body.encrypt, "; Judge Result: ", judge_result);
-    res.json({
-        accept: judge_result
-    });
+    response_message.accept = judge_result;
+    if(judge_result === true){
+        secret_token_key = `${req.body.problem}_Secret`;
+        response_message.secret = (process.env)[secret_token_key];
+    }
+    res.json(response_message);
+});
+
+app.get('/certificate', function(req, res) {
+    let file_name_key = `${req.query.p}_filename`;
+    // console.log( Object.prototype.hasOwnProperty.call(process.env, `${req.query.p}_filename`) );
+    // res.status(200);
+    if(Object.prototype.hasOwnProperty.call(process.env, file_name_key)){
+        let file_name = process.env.file_name;
+        res.download(path.join(__dirname, `/private/${req.query.arg}`), file_name, (err) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error! Please retry or ask the administrator");
+            }
+        });
+    }else{
+        res.status(500).send("Humm... It seems that the file isn't exist");
+    }
 });
 
 app.listen(3000);
