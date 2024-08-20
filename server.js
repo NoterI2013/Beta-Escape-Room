@@ -10,7 +10,6 @@ app.use('/src', express.static(path.join(__dirname, 'src')));
 app.use(express.json());
 
 app.get('/', function(req, res) {
-    // res.json({"Hello": "EJS"});
     var mascots = [
         { name: 'Sammy', organization: "DigitalOcean", birth_year: 2012},
         { name: 'Tux', organization: "Linux", birth_year: 1996},
@@ -24,24 +23,30 @@ app.get('/', function(req, res) {
     });
 });
 
-app.get('/pa', function(req, res) {
-    res.render('pages/pa.ejs');
+// app.get('/pa', function(req, res) {
+//     res.render('pages/pa.ejs');
+// });
+
+// app.get('/pb', function(req, res) {
+//     res.render('pages/pb.ejs');
+// });
+
+// app.get('/pc', function(req, res) {
+//     res.render('pages/pc.ejs');
+// });
+
+app.get('/pd', function(req, res) {
+    res.render('pages/pd.ejs');
 });
 
-app.get('/pb', function(req, res) {
-    res.render('pages/pb.ejs');
-});
-
-app.get('/pc', function(req, res) {
-    res.render('pages/pc.ejs');
-});
+// app.get('/pe', function(req, res) {
+//     res.render('pages/pe.ejs');
+// });
 
 app.post('/axios/test', function(req, res) {
     let response_message = {}
     let answer_key = req.body.problem;
     let answer = (process.env)[answer_key];
-    // console.log(answer);
-    // console.log(typeof(answer), typeof(req.body.encrypt));
     let judge_result = answer === req.body.encrypt;
     console.log(req.body.problem, "input: ", req.body.encrypt, "; Judge Result: ", judge_result);
     response_message.accept = judge_result;
@@ -54,8 +59,6 @@ app.post('/axios/test', function(req, res) {
 
 app.get('/certificate', function(req, res) {
     let file_name_key = `${req.query.p}_filename`;
-    // console.log( Object.prototype.hasOwnProperty.call(process.env, `${req.query.p}_filename`) );
-    // res.status(200);
     if(Object.prototype.hasOwnProperty.call(process.env, file_name_key)){
         let file_name = (process.env)[file_name_key];
         res.download(path.join(__dirname, `/private/${req.query.arg}`), file_name, (err) => {

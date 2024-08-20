@@ -1,4 +1,4 @@
-const problemKey = "ProblemB"
+const problemKey = "ProblemD"
 const alphDisplay = document.getElementById('alphDisplay');
 const judgeResult = document.getElementById('judge-result');
 
