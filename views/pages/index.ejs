@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include('../partials/head'); %>
 </head>
+
 <body class="container">
 
-<header>
-  <%- include('../partials/header'); %>
-</header>
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
 
-<main>
-  <div class="jumbotron">
-    <h1>Hello World</h1>
-    <p>Welcome to templating using EJS</p>
+  <main>
+    <div class="jumbotron">
+      <img src="/public/Hello.png" alt="HelloWorld" width="400" height="80">
+      <h2 style="margin-top: 1em;">魔法師協會 公告</h2>
+      <ul>
+        <li>禁止使用任何除關卡提供以外之電子並禁止以任何方式查詢題目</li>
+        <li>請配合指示 切勿擅自脫隊</li>
+        <li>若有任何疑問或身體不適，請立即向關主反應</li>
+        <li>請把握時間作答，線索不會出現在天花板以上、地板以下及窗簾後方</li>
+        <li>謎題不分先後，與難度無關</li>
+        <li>儘管本系統經過測試，但仍然建議手動紀錄密碼</li>
+        <li>祝 一帆風順 武運昌隆</li>
+      </ul>
 
-    <h2>Spirit</h2>
-    <p><%= tagline %></p>
+      <h2>魔法師協會 遺跡行動工作指北</h2>
+      <ul>
+        <li>ProblemA - 全像掃描儀</li>
+        <li>ProblemB - 遺跡拼圖</li>
+        <li>ProblemC - 元素戰場</li>
+        <li>ProblemD - 古代符文</li>
+        <li>ProblemE - 英雄傳記</li>
+      </ul>
 
-    <ul>
-      <% mascots.forEach(function(mascot) { %>
-        <li>
-          <strong><%= mascot.name %></strong>
-          representing <%= mascot.organization %>,
-          born <%= mascot.birth_year %>
-        </li>
-      <% }); %>
-    </ul>
+      <br/><br/><br/>
+      <h5>Attribution</h5>
+      <p><a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Certificates created by gabriella- - Flaticon</a></p>
+    </div>
+  </main>
 
-    <h2>MongoDB</h2>
-    <p><a href="https://www.mongodb.com/docs/drivers/node/current/fundamentals/aggregation/">This is the link to MongoDB</a></p>
-
-    <!-- <h2>Redirect</h2>
-    <p><a href="./public/all.png">all.png</a></p> -->
-  </div>
-</main>
-
-<footer>
-  <%- include('../partials/footer'); %>
-</footer>
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
 
 </body>
+
 </html>
