@@ -3,8 +3,7 @@
 
 <head>
     <%- include('../partials/head'); %>
-    <link rel="stylesheet" href="/src/togglelist.css">
-    <link rel="stylesheet" href="/src/responsive.css">
+    <link rel="stylesheet" href="/src/piano.css">
 </head>
 
 <body class="container">
@@ -15,85 +14,21 @@
 
 <main>
 <div class="jumbotron">
-    <!-- <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 1em;">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZsPxm23AiW8?si=3ACMfhErh6zt0bqL" allowfullscreen></iframe>
-    </div> -->
     <div class="container">
-        <button type="button" class="collapsible" title="try">題目</button>
-        <div class="content">
-            <img src="/public/Q4-1.PNG" alt="Nature" class="responsive" width="720" height="1040" style="align-content: center;">
-        </div>
+        <div class="piano-key white-key" data-note="C" data-enable="true">C</div>
+        <div class="piano-key black-key " data-note="C#" data-enable="false">C#</div>
+        <div class="piano-key white-key" data-note="D" data-enable="true">D</div>
+        <div class="piano-key black-key " data-note="D#" data-enable="false">D#</div>
+        <div class="piano-key white-key" data-note="E" data-enable="true">E</div>
+        <div class="piano-key white-key" data-note="F" data-enable="false">F</div>
+        <div class="piano-key black-key " data-note="F#" data-enable="false">F#</div>
+        <div class="piano-key white-key" data-note="G" data-enable="true">G</div>
+        <div class="piano-key black-key" data-note="G#" data-enable="false">G#</div>
+        <div class="piano-key white-key" data-note="A" data-enable="true">A</div>
+        <div class="piano-key black-key " data-note="A#" data-enable="false">A#</div>
+        <div class="piano-key white-key" data-note="B" data-enable="false">B</div>
     </div>
-    <div class="container" style="margin: 1em;">
-        <video width="1200" controls>
-            <source src="/public/Q4.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-    </div>
-    <div class="container">
-        <div class="row mb-3">
-            <div class="col-12">
-            <input type="text" id="numDisplay" class="form-control form-control-lg" readonly>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">1</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">2</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">3</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-clear">Clear</button>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">4</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">5</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">6</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-backspace">←</button>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">7</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">8</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">9</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100" disabled>&nbsp;</button>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">00</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-btn">0</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100" disabled>●</button>
-            </div>
-            <div class="col-3">
-            <button class="btn btn-secondary btn-lg w-100 num-enter">Enter</button>
-            </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 1em;" id="judge-result"> </div>
+    <div class="container" style="margin-top: 1em;" id="judge-result"> 123</div>
 </div>
 </main>
 
@@ -101,6 +36,7 @@
     <%- include('../partials/footer'); %>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript" src="../../src/pa.js"></script>
 
 </body>

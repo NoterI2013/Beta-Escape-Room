@@ -23,9 +23,9 @@ app.get('/', function(req, res) {
     });
 });
 
-// app.get('/pa', function(req, res) {
-//     res.render('pages/pa.ejs');
-// });
+app.get('/pa', function(req, res) {
+    res.render('pages/pa.ejs');
+});
 
 // app.get('/pb', function(req, res) {
 //     res.render('pages/pb.ejs');
