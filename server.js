@@ -39,9 +39,9 @@ app.get('/pd', function(req, res) {
     res.render('pages/pd.ejs');
 });
 
-// app.get('/pe', function(req, res) {
-//     res.render('pages/pe.ejs');
-// });
+app.get('/pe', function(req, res) {
+    res.render('pages/pe.ejs');
+});
 
 app.post('/axios/test', function(req, res) {
     let response_message = {}

@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // console.log(keySequence);
         // Check if the last few entries match the special key sequence
-        if (keySequence.slice(-specialKey.length).join('') === specialKey) {
-            console.log("You unlock");
-            // Optionally clear the sequence after unlocking
-            keySequence = [];
-        }
+        // if (keySequence.slice(-specialKey.length).join('') === specialKey) {
+        //     console.log("You unlock");
+        //     Optionally clear the sequence after unlocking
+        //     keySequence = [];
+        // }
     }
 });
 

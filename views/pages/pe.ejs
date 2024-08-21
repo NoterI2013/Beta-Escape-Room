@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+<div class="jumbotron">
+    
+    <form>
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="A">弓箭</button>
+                </div>
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="B">白銀劍</button>
+                </div>
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="C">暗影法術</button>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="D">聖光法術</button>
+                </div>
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="E">白銀盾</button>
+                </div>
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="F">狂風魔法</button>
+                </div>
+
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="G">火焰法術</button>
+                </div>
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="H">冰凍法術</button>
+                </div>
+                <div class="col">
+                <button type="button" class="btn btn-secondary btn-lg w-100 weapon-btn" data-note="I">長槍</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <div class="container" style="margin-top: 1em;" id="judge-result">
+    </div>
+    
+</div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+<script type="text/javascript" src="../../src/pe.js"></script>
+
+</body>
+</html>
