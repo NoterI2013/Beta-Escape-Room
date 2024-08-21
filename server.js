@@ -48,7 +48,7 @@ app.post('/axios/test', function(req, res) {
     let answer_key = req.body.problem;
     let answer = (process.env)[answer_key];
     let judge_result = answer === req.body.encrypt;
-    console.log(req.body.problem, "input: ", req.body.encrypt, "; Judge Result: ", judge_result);
+    // console.log(req.body.problem, "input: ", req.body.encrypt, "; Judge Result: ", judge_result);
     response_message.accept = judge_result;
     if(judge_result === true){
         secret_token_key = `${req.body.problem}_Secret`;
