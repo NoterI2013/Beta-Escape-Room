@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // console.log(response.data.accept);
             if(response.data.accept === true){
                 judgeResult.innerHTML = generate("success");
-                judgeResult.children[0].innerHTML += `<hr> <a href="/certificate?arg=${response.data.secret}&p=${problemKey}" class="alert-link">Click here to download the certificate</a>`
+                judgeResult.children[0].innerHTML += `<hr> <a href="/certificate?arg=${response.data.secret}&p=${problemKey}" class="alert-link">點擊查看</a>`
             }else{
                 judgeResult.innerHTML = generate("info");
             }
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const judgeTable = {
-    info : "It seems nothing happened...",
-    success: "Passed!!",
+    info : "空氣寂靜得就像什麼都沒有發生一樣...",
+    success: "你感覺現場出現一絲異樣，就像什麼東西要破繭而出一般...",
     danger: "Wrong Password",
     warning: "Error! Please retry or ask the administrator"
 };
