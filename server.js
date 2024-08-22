@@ -27,14 +27,6 @@ app.get('/pa', function(req, res) {
     res.render('pages/pa.ejs');
 });
 
-// app.get('/pb', function(req, res) {
-//     res.render('pages/pb.ejs');
-// });
-
-// app.get('/pc', function(req, res) {
-//     res.render('pages/pc.ejs');
-// });
-
 app.get('/pd', function(req, res) {
     res.render('pages/pd.ejs');
 });

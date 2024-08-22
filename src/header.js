@@ -22,10 +22,8 @@ function displayAlertMessage() {
 navButton.addEventListener('click', function () {
     const inputValue = navInput.value.trim();  // Get the value from the input field and trim any whitespace
     if (Object.prototype.hasOwnProperty.call(pages, inputValue)) {
-        // console.log(true);
         window.location.href = pages[inputValue];
     } else {
-        // console.log(false);
         // Store a flag in localStorage to indicate that the alert should be displayed
         localStorage.setItem('displayAlert', 'true');
         // Redirect to the home page
@@ -39,7 +37,4 @@ if (window.location.pathname === '/' && localStorage.getItem('displayAlert') ===
         displayAlertMessage();
         localStorage.removeItem('displayAlert');
     }, 150);
-    // displayAlertMessage();
-    // Remove the flag so the alert is not shown on subsequent reloads
-    // localStorage.removeItem('displayAlert');
 }

@@ -7,7 +7,6 @@ const judgeResult = document.getElementById("judge-result");
 
 document.addEventListener('DOMContentLoaded', function () {
     const keys = document.querySelectorAll('.piano-key');
-    // console.log(typeof(keys), keys);
 
     keys.forEach(key => {
         if(key.dataset.enable === "false") return;
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
             keySequence.shift(); // Remove the first element to keep the array size within the limit
         }
 
-        // console.log(key.dataset.note, "enable =", key.dataset.enable);
         const note = key.dataset.note;
         const sound = new Howl({
             src: [`/public/sounds/${note}4.mp3`]
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
             encrypt: keySequence.slice(-specialKey.length).join('')
         })
         .then(function (response) {
-            // console.log(response.data.accept);
             if(response.data.accept === true){
                 judgeResult.innerHTML = generate("success");
                 judgeResult.children[0].innerHTML += `<hr> <a href="/certificate?arg=${response.data.secret}&p=${problemKey}" class="alert-link">點擊查看</a>`
@@ -62,15 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error(err);
             judgeResult.innerHTML = generate("warning");
         });
-
-
-        // console.log(keySequence);
-        // Check if the last few entries match the special key sequence
-        // if (keySequence.slice(-specialKey.length).join('') === specialKey) {
-        //     console.log("You unlock");
-        //     Optionally clear the sequence after unlocking
-        //     keySequence = [];
-        // }
     }
 });
 
@@ -87,6 +75,5 @@ function generate(property){
             ${judgeTable[property]}
         </div>
     `;
-    // console.log(resultDisplay);
     return resultDisplay;
 }

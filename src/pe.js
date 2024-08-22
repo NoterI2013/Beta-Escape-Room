@@ -83,6 +83,5 @@ function generate(property){
             ${judgeTable[property]}
         </div>
     `;
-    // console.log(resultDisplay);
     return resultDisplay;
 }
