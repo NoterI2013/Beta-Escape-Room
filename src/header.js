@@ -2,9 +2,9 @@ const navInput  = document.getElementById('search-input');
 const navButton = document.getElementById('search-btn');
 
 const pages = {
-    "12400": "/pa",
-    "23880": "/pd",
-    "52637": "/pe"
+    "95884": "/pa",
+    "72043": "/pd",
+    "14915": "/pe"
 };
 
 function displayAlertMessage() {
