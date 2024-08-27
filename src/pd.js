@@ -48,7 +48,7 @@ document.querySelectorAll('.alph-clear').forEach(button => {
 const judgeTable = {
     info : "等待系統回應...",
     success: "石門後隱約傳出了啪嗒聲",
-    danger: "偶有微風吹拂，但也僅只於此",
+    danger: "偶有微風吹拂，但也僅只於此<hr> 魔法筆記本對你的答案不甚滿意，建議你再試試看",
     warning: "Error! Please retry or ask the administrator"
 };
 

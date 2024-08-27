@@ -54,7 +54,7 @@ function judge(){
                 clearUserInput(false);
             }else{
                 judgeResult.innerHTML = generate("danger");
-                judgeResult.children[0].innerHTML += `<button class="btn btn-outline-primary btn-sm float-right" id="key-seq-reset">重置</button>`
+                judgeResult.children[0].innerHTML += `<button class="btn btn-outline-primary btn-sm float-right" id="key-seq-reset">再試一次</button>`
                 document.getElementById('key-seq-reset').addEventListener('click', function() {
                     clearUserInput(true);
                 });
@@ -72,7 +72,7 @@ function judge(){
 const judgeTable = {
     info : "等待系統回應...",
     success: "你成功了！ 咦？這是什麼？",
-    danger: "這方法似乎行不通... 換個方法試試（？",
+    danger: "這方法似乎行不通... 換個方法試試（？<hr> 魔法筆記本對你的答案不甚滿意，建議你再試試看",
     warning: "Error! Please retry or ask the administrator",
     primary: `戰術準備：`
 };
@@ -84,4 +84,18 @@ function generate(property){
         </div>
     `;
     return resultDisplay;
+}
+
+const coll = document.getElementsByClassName("collapsible");
+
+for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
 }

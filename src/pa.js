@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const judgeTable = {
-    info : "空氣寂靜得就像什麼都沒有發生一樣...",
+    info : "空氣寂靜得就像什麼都沒有發生一樣... <hr> 魔法筆記本對你的答案不甚滿意，建議你再試試看",
     success: "你感覺現場出現一絲異樣，就像什麼東西要破繭而出一般...",
     danger: "Wrong Password",
     warning: "Error! Please retry or ask the administrator"
