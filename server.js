@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config();
+const { sha256 } = require('js-sha256');
 
 app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
@@ -39,8 +40,10 @@ app.post('/axios/test', function(req, res) {
     let response_message = {}
     let answer_key = req.body.problem;
     let answer = (process.env)[answer_key];
-    let judge_result = answer === req.body.encrypt;
-    // console.log(req.body.problem, "input: ", req.body.encrypt, "; Judge Result: ", judge_result);
+    let user_password = sha256(req.body.encrypt);
+    let judge_result = answer === user_password;
+    // let judge_result = answer === req.body.encrypt;
+    // console.log(`${req.body.problem} | Raw Input: ${req.body.encrypt} \nsha256:  ${user_password} \nJudge Result:  ${judge_result}`);
     response_message.accept = judge_result;
     if(judge_result === true){
         secret_token_key = `${req.body.problem}_Secret`;
